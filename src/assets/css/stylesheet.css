@@ -1,0 +1,49 @@
+/* =================================
+  Base Element Styles
+==================================== */
+
+* {
+	box-sizing: border-box;
+}
+html, body { height: 100%; }
+body {
+	/* font-family: 'Lato', sans-serif; */
+	font-weight: 400;
+	line-height: 1.6;
+	color: #3a3a3a;
+	margin: 0;
+	font-size: 14px;
+}
+    
+a {
+	text-decoration: none;
+	color: var(--primary);
+	cursor: pointer;
+}
+
+img { max-width: 100%; }
+h1 { font-size: 1.75em; margin-bottom: 15px; }
+h2 { font-size: 1.5em; margin-bottom: 10px; }
+h3 { font-size: 1.25em; margin-bottom: 10px; }
+h4 { font-size: 1em; margin-bottom: 5px; }
+h5 { font-size: .75em; margin-bottom: 5px; }
+
+
+/* ---- Re-usable Elements ---- */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+	max-width: 1200px;
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex-items {
+	display: flex;
+	flex-direction: row;
+}
