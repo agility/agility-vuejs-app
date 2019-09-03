@@ -3,6 +3,7 @@ import RichTextArea from './components/modules/RichTextArea'
 import PostsListing from './components/modules/PostListing'
 import PostDetails from './components/modules/PostDetails'
 import Jumbotron from './components/modules/Jumbotron'
+import FeaturesListing from './components/modules/FeaturesListing'
 
 //Our Agility PageTemplates
 import OneColumnTemplate from './components/templates/OneColumnTemplate'
@@ -21,7 +22,8 @@ export default {
         RichTextArea,
         PostsListing,
         Jumbotron,
-        PostDetails
+        PostDetails,
+        FeaturesListing
     },
     pageTemplateComponents: {
         OneColumnTemplate
