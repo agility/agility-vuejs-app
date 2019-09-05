@@ -1,5 +1,5 @@
 <template>
-  <section class="jumbotron" :style="{ backgroundImage: `url(${coverImage})` }">
+  <section class="jumbotron" :style="[item.fields.backgroundImage ? { backgroundImage: `url(${item.fields.backgroundImage.url})` } : { backgroundColor: `#585858`}]">
     <h1>{{item.fields.title}}</h1>
     <h2>{{item.fields.subTitle}}</h2>
 
@@ -25,7 +25,7 @@
 export default {
   data: function() {
     return {
-      coverImage: 'https://e28e3b0b-cdn.agilitycms.cloud/covers/jumbotron-marketers.jpg'
+     
     };
   },
   props: {

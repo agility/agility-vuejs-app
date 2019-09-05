@@ -6,6 +6,7 @@ import Jumbotron from './components/modules/Jumbotron'
 import ContentPanel from './components/modules/ContentPanel'
 import FeaturesListing from './components/modules/FeaturesListing'
 import LogoListing from './components/modules/LogoListing'
+import ContactForm from './components/modules/ContactForm'
 
 //Our Agility PageTemplates
 import OneColumnTemplate from './components/templates/OneColumnTemplate'
@@ -28,7 +29,8 @@ export default {
         ContentPanel,
         PostDetails,
         FeaturesListing,
-        LogoListing
+        LogoListing,
+        ContactForm
     },
     pageTemplateComponents: {
         OneColumnTemplate,

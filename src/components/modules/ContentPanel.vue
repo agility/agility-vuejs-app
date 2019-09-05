@@ -1,8 +1,8 @@
 <template>
-  <section class="content-panel">
+  <section class="content-panel" :style="">
     <div class="container">
       <div class="row">
-        <div v-if="item.fields.imageAlignRight = true" class="content">
+        <div v-if="item.fields.imageAlignRight === 'true'" class="content">
           <div class="text">
             <h4>{{item.fields.title}}</h4>
             <p v-html="item.fields.textblob"></p>
@@ -13,7 +13,7 @@
           </div>
         </div>
 
-        <div v-if="item.fields.imageAlignRight = false" class="content">
+        <div v-else class="content abc">
           <div class="image">
             <img :src="item.fields.image.url" :alt="item.fields.image.label" />
           </div>

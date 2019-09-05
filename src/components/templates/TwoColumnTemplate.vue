@@ -8,27 +8,31 @@
       :dynamicPageItem="dynamicPageItem"
     />
 
-    <section class="body-columns">
+    <div class="container">
+        <div class="row">
+          <div class="body-columns">
 
-      <div class="main-column">
-        <ContentZone
-          name="FeatureContentZone"
-          :page="page"
-          :pageInSitemap="pageInSitemap"
-          :dynamicPageItem="dynamicPageItem"
-        />
+            <div class="main-column">
+              <ContentZone
+                name="FeatureContentZone"
+                :page="page"
+                :pageInSitemap="pageInSitemap"
+                :dynamicPageItem="dynamicPageItem"
+              />
+            </div>
+
+            <aside class="side-column">
+              <ContentZone
+                name="SideContentZone"
+                :page="page"
+                :pageInSitemap="pageInSitemap"
+                :dynamicPageItem="dynamicPageItem"
+              />
+            </aside>
+
+          </div>
+        </div>
       </div>
-
-      <aside class="side-column">
-        <ContentZone
-          name="SideContentZone"
-          :page="page"
-          :pageInSitemap="pageInSitemap"
-          :dynamicPageItem="dynamicPageItem"
-        />
-      </aside>
-
-    </section>
   </div>
 </template>
 
