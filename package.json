@@ -10,10 +10,14 @@
   "dependencies": {
     "@agility/content-fetch": "^0.5.0",
     "core-js": "^2.6.5",
+    "less": "^3.10.3",
+    "truncate-html": "^1.0.2",
     "vue": "^2.6.10",
+    "vue-fixed-header": "^3.2.2",
+    "vue-progressbar": "^0.7.5",
     "vue-router": "^3.0.3",
-    "vuex": "^3.0.1",
-    "truncate-html": "^1.0.2"
+    "vue-sticky-directive": "0.0.10",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",

@@ -3,10 +3,13 @@ import RichTextArea from './components/modules/RichTextArea'
 import PostsListing from './components/modules/PostListing'
 import PostDetails from './components/modules/PostDetails'
 import Jumbotron from './components/modules/Jumbotron'
+import ContentPanel from './components/modules/ContentPanel'
 import FeaturesListing from './components/modules/FeaturesListing'
+import LogoListing from './components/modules/LogoListing'
 
 //Our Agility PageTemplates
 import OneColumnTemplate from './components/templates/OneColumnTemplate'
+import TwoColumnTemplate from './components/templates/TwoColumnTemplate'
 
 export default {
     guid: 'e28e3b0b', //Set your guid here
@@ -22,10 +25,13 @@ export default {
         RichTextArea,
         PostsListing,
         Jumbotron,
+        ContentPanel,
         PostDetails,
-        FeaturesListing
+        FeaturesListing,
+        LogoListing
     },
     pageTemplateComponents: {
-        OneColumnTemplate
+        OneColumnTemplate,
+        TwoColumnTemplate
     }
 }

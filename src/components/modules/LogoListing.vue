@@ -1,16 +1,19 @@
 <template>
-  <section class="section-features">
+  <section class="section-logo-listing">
     <div class="container">
       <h3>{{item.fields.title}}</h3>
 
-      <div class="features-list">
-        <template v-for="feature in features">
-          <div class="feature" :key="feature.contentID">
-            <img v-if="feature.image != null" :src="feature.image.url" :alt="feature.image.label" />
-            <h4>
-              {{feature.title}}
-            </h4>
-            <p v-html="feature.description"></p>
+      <div class="logo-list">
+        <template v-for="logo in logos">
+          <div class="logo" :key="logo.contentID">
+            <span v-if="logo.url && logo.image">
+              <a :href="logo.url" :title="logo.url.title">
+                <img :src="logo.image.url" :alt="logo.image.label" />
+              </a>
+            </span>
+            <span v-else>
+              <img v-if="logo.image" :src="logo.image.url" :alt="logo.image.label" />
+            </span>
           </div>
         </template>
       </div>
@@ -29,7 +32,7 @@ export default {
   },
   data: function() {
     return {
-      features: []
+      logos: []
     };
   },
   async mounted() {
@@ -45,11 +48,11 @@ export default {
 
       //then get our features
       let contentListResult = await api.getContentList({
-        referenceName: "features",
+        referenceName: "customerlogos",
         languageCode: self.$agility.config.languageCode
       });
 
-      let features = [];
+      let logos = [];
 
       contentListResult.items.forEach(item => {
         let img = null;
@@ -60,14 +63,13 @@ export default {
           };
         }
 
-        features.push({
+        logos.push({
           contentID: item.contentID,
-          title: item.fields.title,
-          description: item.fields.description,
+          url: item.fields.url,
           image: img
         });
 
-        this.features = features;
+        this.logos = logos;
       });
     } catch (error) {
       if (console) console.error(error);

@@ -1,19 +1,22 @@
 <template>
-  <section class="posts-listing">
+  <section class="section-news">
     <div class="container">
-      <h1>{{item.fields.title}}</h1>
-      <template v-for="post in posts">
-        <div class="post flex-items" :key="post.contentID">
-          <img v-if="post.image != null" :src="post.image.url" :alt="post.image.label" />
-          
-          <div class="post-content">
-            <h3>
-              <router-link :to="post.to">{{post.title}}</router-link>
-            </h3>
-            <p v-html="post.excerpt"></p>
+      <h3>{{item.fields.title}}</h3>
+
+      <div class="posts-list">
+        <template v-for="post in posts.slice(0, item.fields.postCount)">
+          <div class="post" :key="post.contentID">
+            <img v-if="post.image != null" :src="post.image.url" :alt="post.image.label" />
+            
+            <div class="post-content">
+              <h4>
+                <router-link :to="post.to">{{post.title}}</router-link>
+              </h4>
+              <p v-html="post.excerpt"></p>
+            </div>
           </div>
-        </div>
-      </template>
+        </template>
+      </div>
     </div>
   </section>
 </template>

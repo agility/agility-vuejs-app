@@ -1,26 +1,32 @@
 
 <template>
-  <header class="header">
-    <div class="container">
-      <div class="row">
-        <div v-if="siteLogo">
-          <img :src="siteLogo.url" :alt="siteName" />
-          <span v-if="siteTagline" class="tagline">{{siteTagline}}</span>
-        </div>
-        <div v-else>{{siteName}}</div>
+  <fixed-header :threshold="0">
+    <header class="header" >
+      <div class="container">
+        <div class="row flex-items">
+          <div v-if="siteLogo">
+            <router-link to="/" title="Home"><img :src="siteLogo.url" :alt="siteName" /></router-link>
+            <span v-if="siteTagline" class="tagline">{{siteTagline}}</span>
+          </div>
+          <div v-else>{{siteName}}</div>
 
-        <ul :if="sitemap != null">
-          <li v-for="node in sitemap" :key="node.pageID" v-if="node.visible.menu">
-            <router-link :to="node.path">{{node.menuText}}</router-link>
-          </li>
-        </ul>
+          <nav class="global-nav">
+            <ul :if="sitemap != null">
+              <li v-for="node in sitemap" :key="node.pageID" v-if="node.visible.menu">
+                <router-link :to="node.path">{{node.menuText}}</router-link>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
+  </fixed-header>
 </template>
 
 <script>
+import Vue from 'vue'
 import PreviewBar from "../agility/PreviewBar";
+import FixedHeader from 'vue-fixed-header';
 
 export default {
   data: function() {
@@ -30,6 +36,9 @@ export default {
       siteTagline: null,
       sitemap: null
     };
+  },
+  components: {
+    FixedHeader
   },
   mounted: async function() {
     const self = this;
@@ -67,39 +76,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.header {
-  background-color: #717171;
-  color: #fff;
-  padding: 16px;
-}
-
-.header img {
-  width: 200px;
-  height: auto;
-}
-
-.header ul {
-  display: inline-block;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  margin-right: 30px;
-}
-
-.header li {
-  display: inline-block;
-  margin-left: 16px;
-}
-
-.header a,
-header.a:visited,
-header.a:active {
-  color: #fff;
-}
-
-.header a:hover {
-  text-decoration: none;
-}
-</style>
